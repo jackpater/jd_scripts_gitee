@@ -13,7 +13,7 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: sync LXK9301-jd_scripts
+      - name: sync lxk0301-jd_scripts
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
@@ -28,5 +28,5 @@ jobs:
         with:	
           type: now	
           from_branch: gitee	
-          target_branch: test
+          target_branch: main
           github_token: ${{ secrets.PAT }}
