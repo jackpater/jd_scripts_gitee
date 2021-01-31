@@ -22,11 +22,11 @@ jobs:
           destination_branch: "gitee"
           github_token: ${{ secrets.PAT }}
   
-#       - name: Merge master to main
-#         uses: devmasx/merge-branch@v1.3.1	
-#         if: env.PAT	
-#         with:	
-#           type: now	
-#           from_branch: master	
-#           target_branch: main	
-#           github_token: ${{ secrets.PAT }}
+      - name: Merge master to main
+        uses: devmasx/merge-branch@v1.3.1	
+        if: env.PAT	
+        with:	
+          type: now	
+          from_branch: gitee	
+          target_branch: test
+          github_token: ${{ secrets.PAT }}
