@@ -1,10 +1,10 @@
 ###### need change
-name: jd_nh
+name: jd_sgmh
 on:
   workflow_dispatch:
   ###### need change
   schedule:
-    - cron: '1 23 * * *'
+    - cron: '20 0 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,12 +28,13 @@ jobs:
         run: |
           npm install
       ###### need change
-      - name: '运行 【京东年货节】'
+      - name: '运行 【京东闪购盲盒】'
         run: |
-          node jd_nh.js
+          node jd_sgmh.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}         
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
-          TG_USER_ID: ${{ secrets.TG_USER_ID }}  
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}          
+          JDSGMH_SHARECODES: ${{ secrets.JDSGMH_SHARECODES }}          

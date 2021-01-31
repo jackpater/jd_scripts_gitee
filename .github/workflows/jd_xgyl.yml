@@ -1,10 +1,10 @@
 ###### need change
-name: jd_car
+name: jd_xgyl
 on:
   workflow_dispatch:
   ###### need change
   schedule:
-    - cron: '10 23 * * *'
+    - cron: '30 1 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,9 +28,9 @@ jobs:
         run: |
           npm install
       ###### need change
-      - name: '运行 【京东汽车签到】'
+      - name: '运行 【小鸽有礼】'
         run: |
-          node jd_car.js
+          node jd_xgyl.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
