@@ -22,7 +22,7 @@ jobs:
           destination_branch: "gitee"
           github_token: ${{ secrets.PAT }}
   
-      - name: Merge master to main
+      - name: Merge gitee to main
         uses: devmasx/merge-branch@v1.3.1	
         if: env.PAT	
         with:	
