@@ -3,8 +3,8 @@ name: jd_crazy_joy_coin
 on:
   workflow_dispatch:
   ###### need change
-  schedule:
-    - cron: '10 22 * * *'
+#   schedule:
+#     - cron: '10 22 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
