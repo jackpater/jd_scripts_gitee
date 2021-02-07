@@ -9,9 +9,6 @@
 5 7 * * * node /scripts/jd_xg.js >> /scripts/logs/jd_xg.log 2>&1
 # 小鸽有礼2(活动时间：2021年1月28日～2021年2月28日)
 34 9 * * * node /scripts/jd_xgyl.js >> /scripts/logs/jd_jd_xgyl.log 2>&1
-# 京东手机年终奖(活动时间：2021年1月26日～2021年2月8日)
-15 0 * * * node /scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
-
 # 京东压岁钱(活动时间：2021-2-1至2021-2-11)
 20 8,12 * * * node /scripts/jd_newYearMoney.js >> /scripts/logs/jd_newYearMoney.log 2>&1
 # 京东压岁钱抢百元卡(活动时间：2021-2-1至2021-2-11)
@@ -83,8 +80,6 @@
 10 11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 宠汪汪邀请助力
 10 9-20/2 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-# 注销京东已开的店铺会员，不是注销京东plus会员，个别店铺无法注销
-44 4 * * 6 node /scripts/jd_unbind.js >> /scripts/logs/jd_unbind.log 2>&1
 # crazyJoy自动每日任务
 10 7 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 # 京东汽车旅程赛点兑换金豆
@@ -105,7 +100,5 @@
 27 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 # 京东秒秒币
 10 7 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
-# 京东超级盒子
-20 7 * * * node /scripts/jd_super_box.js >> /scripts/logs/jd_super_box.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1

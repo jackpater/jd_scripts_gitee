@@ -11,7 +11,7 @@
 |      Name       |    归属     |  属性  | 默认值 | 说明                                                         |
 | :-------------: | :---------: | :----: | :----: | ------------------------------------------------------------ |
 |   `JD_DEBUG`    | 脚本打印log | 非必须 |  true  | 运行脚本时，是否显示log,默认显示。改成false表示不显示，注重隐私的人可以在设置secret -> `Name:JD_DEBUG,Value:false` |
-| `JD_USER_AGENT` |    京东     | 非必须 |        | 自定义此库里京东系列脚本的UserAgent，不懂不知不会UserAgent的请不要随意填写内容。如需使用此功能建议填写京东APP的UA，在京东聊天界面发送 https://www.ip138.com/useragent/ ，打开网址即可获得 |
+| `JD_USER_AGENT` |    京东     | 非必须 |        | 自定义此库里京东系列脚本的UserAgent，不懂不知不会UserAgent的请不要随意填写内容。如需使用此功能建议填写京东APP的UA |
 
 ##### 推送通知环境变量(目前提供`微信server酱`、`pushplus(推送加)`、`iOS Bark APP`、`telegram机器人`、`钉钉机器人`、`企业微信机器人`、`iGot`、`QQ酷推`等通知方式)
 
@@ -35,7 +35,7 @@
 
 ##### 互助码类环境变量
 
-|            Name             |        归属        |  属性  | 需要助力次数/提供助力次数 | 说明                                                         |
+|            Name             |        归属        |  属性  | 需要助力次数/可提供助力次数 | 说明                                                         |
 | :-------------------------: | :----------------: | :----: | :-----------------------: | ------------------------------------------------------------ |
 |      `FRUITSHARECODES`      |   东东农场<br>互助码   | 非必须 |            5/4            | 填写规则请看[jdFruitShareCodes.js](https://github.com/LXK9301/jd_scripts/blob/master/jdFruitShareCodes.js)或见下方[互助码的填写规则](#互助码的填写规则) |
 |       `PETSHARECODES`       |   东东萌宠<br>互助码   | 非必须 |            5/5            | 填写规则请看[jdPetShareCodes.js](https://github.com/LXK9301/jd_scripts/blob/master/jdPetShareCodes.js)或见下方[互助码的填写规则](#互助码的填写规则) |
@@ -47,9 +47,10 @@
 |     `JDJOY_SHARECODES`      |  疯狂的JOY<br>互助码   | 非必须 |            6/             | 填写规则和上面类似，或见下方[互助码的填写规则](#互助码的填写规则) |
 |    `BOOKSHOP_SHARECODES`    |   京东书店<br>互助码   | 非必须 |            10/            | 填写规则和上面类似，或见下方[互助码的填写规则](#互助码的填写规则) |
 |    `JD_CASH_SHARECODES`     |  签到领现金<br>互助码  | 非必须 |            10/            | 填写规则和上面类似，或见下方[互助码的填写规则](#互助码的填写规则) |
-|      `JXNC_SHARECODES`      |   京喜农场<br>互助码   | 非必须 |             /             | 注意：京喜农场 种植种子发生变化的时候，互助码也会变！！<br>每个账号 shareCode 是一个 json，json 需要用单引号包裹且是一行字符串，<br>否则设置环境变量时会出错，示例：'{"smp":"22bdadsfaadsfadse8a","active":"jdnc_1_btorange210113_2","joinnum":"1"}'，多账单间使用`&`或换行分开。详细说明参见[#Pr202](https://github.com/LXK9301/jd_scripts/pull/202) 如果使用`docker-compose` 部署就不需要在互助码两端加单引号。详细参见Issues[#I35AG8](https://gitee.com/lxk0301/jd_scripts/issues/I35AG8)|
+|      `JXNC_SHARECODES`      |   京喜农场<br>互助码   | 非必须 |             /             | 注意：京喜农场 种植种子发生变化的时候，互助码也会变！！<br>每个账号 shareCode 是一个 json，json 需要用单引号包裹且是一行字符串，<br>否则设置环境变量时会出错，示例：'{"smp":"22bdadsfaadsfadse8a","active":"jdnc_1_btorange210113_2","joinnum":"1"}'，<br>多账单间使用`&`或换行分开。详细说明参见[#Pr202](https://github.com/LXK9301/jd_scripts/pull/202)<br>如果使用`docker-compose`部署就不需要在互助码两端加单引号。详细参见Issues[#I35AG8](https://gitee.com/lxk0301/jd_scripts/issues/I35AG8)|
 |    `JDSGMH_SHARECODES`      |  闪购盲盒<br>互助码  | 非必须 |            10/            | 填写规则和上面类似，或见下方[互助码的填写规则](#互助码的填写规则) |
-|     `JDNY_SHARECODES`       |    京东压岁钱<br>互助码    | 非必须 |            未知/未知            | 填写规则和上面类似，或见下方[互助码的填写规则](#互助码的填写规则) |
+|     `JDNY_SHARECODES`       |    京东压岁钱<br>互助码    | 非必须 |           1588/3            | 填写规则和上面类似，或见下方[互助码的填写规则](#互助码的填写规则) |
+
 ##### 控制脚本功能环境变量
 
 
