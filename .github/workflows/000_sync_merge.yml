@@ -13,21 +13,31 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: sync lxk0301-jd_scripts
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
+#       - name: sync lxk0301-jd_scripts
+#         uses: repo-sync/github-sync@v2
+#         if: env.PAT
+#         with:
+#           source_repo: "https://gitee.com/lxk0301/jd_scripts.git"
+#           source_branch: "master"
+#           destination_branch: "gitee"
+#           github_token: ${{ secrets.PAT }}
+  
+
+      - name: git-sync
+        uses: wei/git-sync@v3
         with:
-          #source_repo: "https://gitee.com/lxk0301/jd_scripts.git"
           source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
           source_branch: "master"
-          destination_branch: "gitee"
-          github_token: ${{ secrets.PAT }}
-  
-      - name: Merge gitee to main
-        uses: devmasx/merge-branch@v1.3.1	
-        if: env.PAT	
-        with:	
-          type: now	
-          from_branch: gitee	
-          target_branch: main
-          github_token: ${{ secrets.PAT }}
+          destination_repo: "wangworld/ac_nodejs"
+          destination_branch: "tmp"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # optional
+          source_ssh_private_key: ${{ secrets.SOURCE_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
+          destination_ssh_private_key: ${{ secrets.DESTINATION_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
+#       - name: Merge gitee to main
+#         uses: devmasx/merge-branch@v1.3.1	
+#         if: env.PAT	
+#         with:	
+#           type: now	
+#           from_branch: gitee	
+#           target_branch: main
+#           github_token: ${{ secrets.PAT }}
