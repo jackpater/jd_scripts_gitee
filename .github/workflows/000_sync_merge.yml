@@ -23,7 +23,7 @@ jobs:
 #           github_token: ${{ secrets.PAT }}
   
 
-      - name: git-sync
+      - name: git-sync gitee/lxk0301/jd_scripts.git to github with private key
         uses: wei/git-sync@v3
         with:
           source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
