@@ -4,9 +4,7 @@ on:
     - cron: '30 0-15/3 * * *'
   workflow_dispatch:
 jobs:
-  merge-branch:
-    env:
-      PAT: ${{ secrets.PAT }}
+  sync-branch:
     runs-on: ubuntu-latest
     steps:    
       - uses: actions/checkout@v2
@@ -17,8 +15,8 @@ jobs:
         with:
           source_repo: "git@gitee.com:lxk0301/jd_scripts.git"
           source_branch: "master"
-          destination_repo: "wangworld/ac_nodejs"
-          destination_branch: "gitee"
+          destination_repo: "wangworld/ac_script_mirror"
+          destination_branch: "main"
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # optional
           source_ssh_private_key: ${{ secrets.SOURCE_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
           destination_ssh_private_key: ${{ secrets.DESTINATION_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
